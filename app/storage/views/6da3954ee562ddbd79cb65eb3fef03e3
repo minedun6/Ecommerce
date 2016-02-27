@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?php echo $title; ?></title>
+    <meta charset="utf-8"/>
+    <?php /* BEGIN STYLES IMPORTS */ ?>
+    <?php echo HTML::style('http://bootswatch.com/flatly/bootstrap.min.css',['media' => 'screen']); ?>
+    <?php echo HTML::style('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', ['rel'=> 'stylesheet']); ?>
+    <?php echo HTML::style('Css/custom.css'); ?>
+    <?php /* END STYLES IMPORTS */ ?>
+</head>
+<body>
+<?php echo $__env->make('layouts.navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div class="container">

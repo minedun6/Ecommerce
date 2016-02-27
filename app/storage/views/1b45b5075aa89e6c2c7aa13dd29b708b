@@ -1,0 +1,51 @@
+
+<?php $__env->startSection('content'); ?>
+<h2 class="title-header">List of Products</h2>
+<?php foreach (array_chunk($products->all(),4) as $row): ?>
+<div class="item">
+    <div class="row">
+        <?php foreach ($row as $product): ?>
+        <div class="col-sm-3">
+            <div class="col-item">
+                <div class="photo">
+                    <a href="<?php echo URL::route('product.view', $product->slug); ?>">
+                        <?php echo HTML::image($product->img_url, $product->title, ['class' => 'img-responsive']); ?>
+                    </a>
+                </div>
+                <div class="info">
+                    <div class="row">
+                        <div class="price col-md-12">
+                            <h5><?php echo $product->title; ?></h5>
+                            <h5 class="price-text-color">&dollar;<?php echo $product->price; ?></h5>
+                        </div>
+                    </div>
+                    <div class="separator clear-left">
+                        <?php echo Form::open(['route' => 'product.add', 'method' => 'post']); ?>
+                        <?php echo Form::hidden('quantity', 1); ?>
+                        <?php echo Form::hidden('id', $product->id); ?>
+                        <p class="btn-add">
+                            <i class="fa fa-shopping-cart"></i>
+                            <button type="submit" class="btn-link hidden-sm">Add to Cart</button>
+                        </p>
+                        <?php echo Form::close(); ?>
+
+                        <p class="btn-details">
+                            <i class="price-text-color fa fa-star"></i>
+                            <i class="price-text-color fa fa-star"></i>
+                            <i class="price-text-color fa fa-star"></i>
+                            <i class="price-text-color fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </p>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<br/>
+<?php endforeach; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

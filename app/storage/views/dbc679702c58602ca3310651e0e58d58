@@ -1,0 +1,10 @@
+</div>
+
+<?php /* BEGIN JAVASCRIPT IMPORTS */ ?>
+<?php echo HTML::script('http://code.jquery.com/jquery.js'); ?>
+<?php echo HTML::script('//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js'); ?>
+<?php echo HTML::script('Js/cart.js'); ?>
+<?php /* END JAVASCRIPT IMPORTS */ ?>
+
+</body>
+</html>

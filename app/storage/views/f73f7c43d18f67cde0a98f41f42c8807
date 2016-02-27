@@ -1,0 +1,13 @@
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <a href="#" class="thumbnail">
+            <?php echo HTML::image($product->img_url, $product->title, ['class' => 'img-responsive']); ?>
+        </a>
+    </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
